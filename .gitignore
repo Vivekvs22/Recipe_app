@@ -1,4 +1,27 @@
 # Miscellaneous
+# Flutter/Dart/Pub related
+**/build/
+.dart_tool/
+.flutter-plugins
+.packages
+.pub-cache/
+.pub/
+.idea/
+*.iml
+
+# Android related
+local.properties
+*.jks
+
+# iOS related
+ios/Pods
+ios/.symlinks
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+
+# VS Code related
+.vscode/
+
 *.class
 *.log
 *.pyc
