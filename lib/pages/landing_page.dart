@@ -8,6 +8,7 @@ class LandingPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          // Background image
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -18,12 +19,13 @@ class LandingPage extends StatelessWidget {
               ),
             ),
           ),
+          // Foreground content
           Positioned(
             bottom: 0,
             child: Container(
               padding: EdgeInsets.only(left: 16, right: 16, bottom: 32),
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 60 / 100,
+              height: MediaQuery.of(context).size.height * 0.6,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [Colors.black.withOpacity(0.7), Colors.transparent],
@@ -32,10 +34,9 @@ class LandingPage extends StatelessWidget {
                 ),
               ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // Title and subtitle
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
@@ -52,48 +53,48 @@ class LandingPage extends StatelessWidget {
                       ),
                       Text(
                         'Find and save your favorite recipes',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ],
                   ),
+                  // Expanded GridView to avoid overflow
                   Expanded(
                     child: Column(
                       children: [
-                        GridView.count(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 16.0,
-                          mainAxisSpacing: 16.0,
-                          shrinkWrap: true,
-                          children: [
-                            _buildCard(
-                              context,
-                              title: 'Recipe List',
-                              color: Colors.orange,
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => RecipeListPage(),
-                                  ),
-                                );
-                              },
-                            ),
-                            _buildCard(
-                              context,
-                              title: 'Favorites',
-                              color: Colors.blue,
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => FavoriteRecipesPage(),
-                                  ),
-                                );
-                              },
-                            ),
-                          ],
+                        Expanded(
+                          child: GridView.count(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 16.0,
+                            mainAxisSpacing: 16.0,
+                            children: [
+                              _buildCard(
+                                context,
+                                title: 'Recipe List',
+                                color: Colors.orange,
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => RecipeListPage(),
+                                    ),
+                                  );
+                                },
+                              ),
+                              _buildCard(
+                                context,
+                                title: 'Favorites',
+                                color: Colors.blue,
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => FavoriteRecipesPage(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
                         ),
                         SizedBox(height: 18.0),
                         _buildHorizontalCardWithImage(
@@ -107,6 +108,7 @@ class LandingPage extends StatelessWidget {
               ),
             ),
           ),
+          // Bottom card
           Positioned(
             bottom: 0,
             left: 0,
