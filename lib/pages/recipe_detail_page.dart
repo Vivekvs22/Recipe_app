@@ -100,7 +100,6 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
               ),
             ),
             SizedBox(height: 16),
-            // Recipe Description with Frame
             Container(
               padding: EdgeInsets.all(16.0),
               decoration: BoxDecoration(
@@ -139,7 +138,6 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 5),
-            // Wrap the ListView with Expanded to handle dynamic height
             widget.recipe.ingredients.isEmpty
                 ? Text('No ingredients available.', style: TextStyle(fontSize: 16))
                 : Container(
