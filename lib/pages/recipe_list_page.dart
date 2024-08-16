@@ -3,7 +3,6 @@ import '../services/recipe_service.dart';
 import 'recipe_detail_page.dart';
 import 'favorite_recipes_page.dart';
 
-// Helper function to convert string to title case
 String toTitleCase(String text) {
   if (text.isEmpty) return text;
   final words = text.split(' ');
