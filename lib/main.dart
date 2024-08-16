@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'pages/recipe_list_page.dart';
-import 'pages/favorite_recipes_page.dart';
 import 'pages/landing_page.dart';
 void main() {
   runApp(MyApp());

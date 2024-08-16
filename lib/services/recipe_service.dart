@@ -14,7 +14,7 @@ class RecipeService {
         List<String> recipes = List<String>.from(data['recipesList']);
         return recipes;
       } else {
-        return Future.error('It seems we couldn’t fetch the recipe list. Please try again later.');
+        return Future.error('It seems we could not fetch the recipe list. Please try again later.');
       }
     } catch (e) {
       return Future.error('Oops! Something went wrong while fetching the recipe list.\n Please Check the internet connection!!');
@@ -51,7 +51,7 @@ class RecipeService {
             ingredients: keyIngredients,
           );
         } catch (e) {
-          throw Exception('Oops! We couldn’t fetch the details for the recipe. Please try again later.');
+          throw Exception('Oops! We could not fetch the details for the recipe. Please try again later.');
         }
       } else {
         throw Exception('Sorry, but we can’t retrieve the recipe details right now. Please try again later.');

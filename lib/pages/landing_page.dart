@@ -8,7 +8,6 @@ class LandingPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Background image
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -19,7 +18,6 @@ class LandingPage extends StatelessWidget {
               ),
             ),
           ),
-          // Foreground content
           Positioned(
             bottom: 0,
             child: Container(
@@ -35,7 +33,6 @@ class LandingPage extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  // Title and subtitle
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -57,7 +54,6 @@ class LandingPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // Expanded GridView to avoid overflow
                   Expanded(
                     child: Column(
                       children: [
