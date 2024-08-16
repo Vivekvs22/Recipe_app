@@ -92,7 +92,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
                   placeholder: (context, url) => Center(
                     child: CircularProgressIndicator(),
                   ),
-                  errorWidget: (context, url, error) => Image.asset('lib/assets/default_image.png'), // Use default image on error
+                  errorWidget: (context, url, error) => Image.asset('lib/assets/default_image.png'),
                   width: double.infinity,
                   height: 200,
                   fit: BoxFit.cover,
@@ -143,7 +143,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
             widget.recipe.ingredients.isEmpty
                 ? Text('No ingredients available.', style: TextStyle(fontSize: 16))
                 : Container(
-              height: MediaQuery.of(context).size.height * 0.4, // Adjust as needed
+              height: MediaQuery.of(context).size.height * 0.4,
               child: ListView.separated(
                 itemCount: widget.recipe.ingredients.length,
                 separatorBuilder: (context, index) => Divider(),
@@ -152,7 +152,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
                   return ListTile(
                     contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
                     leading: CachedNetworkImage(
-                      imageUrl: ingredient.image.isNotEmpty ? ingredient.image : 'lib/assets/default_ingredient_placeholder.png', // Use default image for ingredients
+                      imageUrl: ingredient.image.isNotEmpty ? ingredient.image : 'lib/assets/default_ingredient_placeholder.png',
                       placeholder: (context, url) => Center(
                         child: CircularProgressIndicator(),
                       ),
@@ -162,7 +162,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage> {
                       fit: BoxFit.cover,
                     ),
                     title: Text(
-                      toTitleCase(ingredient.name.isNotEmpty ? ingredient.name : 'Unknown'),
+                      toTitleCase(ingredient.name.isNotEmpty ? ingredient.name : 'Ingredient '),
                     ),
                   );
                 },
